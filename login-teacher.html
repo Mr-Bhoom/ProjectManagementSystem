@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Login</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Register</title>
+    <link rel="stylesheet" href="">
     <script src="https://kit.fontawesome.com/9224595727.js" crossorigin="anonymous"></script>
-    <style>
-        *{
+    <style >*{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -155,55 +154,80 @@ form p a{
     color: #999;
 }
 
-
-    </style>
+</style>
 </head>
 <body>
-    <div class="navbar">
-        <ul>
-            <li><a href="#">If you are not registered yet</a></li>
-            <li class="register-button"><a href="Register-student.html">Register</a></li>
-        </ul>
-    </div>
-    
     <div class="container">
         <div class="form-box">
-            <h1>Login Here!</h1>
+            <h1>Register Here!</h1>
                 <form >
                     <div class="input-group">
                         <div class="input-field">
                             <i class="fa-solid fa-user"></i>
-                            <input type="text" id="username" placeholder="username">
+                            <input type="text" id="fullname" placeholder="First Name  Middle Name  Last Name" name="fullName">
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Email" name="email">
+                        </div>
+                        <div class="input-field select-wrapper">
+                            <i class="fa-solid fa-building select-icon"></i>
+                            <select id="department" placeholder="Select Department" name="department">
+                                <option value="" disabled selected>Select Department</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Civil Engineering">Civil Engineering</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            </select>
+                        </div>
+                        <div class="input-field select-wrapper">
+                            <i class="fa-solid fa-calendar-days select-icon"></i>
+                            <select id="year" placeholder="Select Year" name="year">
+                                <option value="" disabled selected>Select Year</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="username" placeholder="username" name="username">
                         </div>
 
                         <div class="input-field">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" id="password" placeholder="password">
+                            <input type="password" id="password" placeholder="password" name="password">
                         </div>
 
-                        <p>
-                            Lost password <a href="changePassword.html">Click Here!</a>
-                        </p>
                     </div>
+                    
                     <div class="button-field">
-                        <button type="button" onclick="validateForm()">Log in</button>
+                        <button type="button" onclick="validateForm()">Register</button>
                     </div>
+                    
                 </form>
         </div>
     </div>
 
     <script>
         function validateForm() {
-            var username = document.getElementById("username").value;
+            var fullName = document.getElementById("fullname").value;
+            var email = document.getElementById("email").value;
+            var department = document.getElementById("department").value;
+            var year = document.getElementById("year").value;
+            var username = document.getElementById("username").value; 
             var password = document.getElementById("password").value;
+            
 
-            if (username == "" || password == "") {
+            if (fullName == "" || email == "" || department == "" || year =="" || username == "" || password == "") {
                 alert("Please fill in all fields");
             }
-            if (!username.match(/@kitcoek.in/)) {
-                alert("Username must end with '@kitcoek.in'");
-            }  
-        
+            
+            if (!username.endsWith("@kitcoek")) {
+                alert("Username must end with '@kitcoek'");
+             } 
+           
         }
     </script>
     

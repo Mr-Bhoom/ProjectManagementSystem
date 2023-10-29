@@ -165,15 +165,15 @@ form p a{
                     <div class="input-group">
                         <div class="input-field">
                             <i class="fa-solid fa-user"></i>
-                            <input type="text" id="fullname" placeholder="Full Name">
+                            <input type="text" id="fullname" placeholder="Full Name" name="fullname">
                         </div>
                         <div class="input-field">
                             <i class="fa-solid fa-envelope"></i>
-                            <input type="email" id="email" placeholder="Email">
+                            <input type="email" id="email" placeholder="Email" name="email">
                         </div>
                         <div class="input-field select-wrapper">
                             <i class="fa-solid fa-building select-icon"></i>
-                            <select id="department" placeholder="Select Department">
+                            <select id="department" placeholder="Select Department" name="department">
                                 <option value="" disabled selected>Select Department</option>
                                 <option value="Computer Science">Computer Science</option>
                                 <option value="Civil Engineering">Civil Engineering</option>
@@ -184,12 +184,12 @@ form p a{
                         
                         <div class="input-field">
                             <i class="fa-solid fa-user"></i>
-                            <input type="text" id="username" placeholder="username">
+                            <input type="text" id="username" placeholder="username" name="username">
                         </div>
 
                         <div class="input-field">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" id="password" placeholder="password">
+                            <input type="password" id="password" placeholder="password" name="password">
                         </div>
 
                     </div>
@@ -212,13 +212,16 @@ form p a{
             var password = document.getElementById("password").value;
             
 
-            if (fullName == "" || email == "" || department == "" || year =="" || username == "" || password == "") {
+            if (fullName == "" || email == "" || department == ""  || username == "" || password == "") {
                 alert("Please fill in all fields");
             }
             
-            if (!username.endsWith("@kitcoek.in")) {
+            else if (!username.endsWith("@kitcoek.in")) {
                 alert("Username must end with '@kitcoek.in'");
-             } 
+            }
+            else {
+                alert("Registration successful! You can now log in.");
+            } 
                 
         }
     </script>
