@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template,session
-import mysql.connector
+import mysql.connector 
 
 app=Flask(__name__)
 
@@ -19,17 +19,18 @@ def registration_form():
 @app.route('/register', methods=['GET','POST'])
 def register():
     cursor = db.cursor()
-    full_name = request.form['full_name']
-    Email = request.form['Email']
-    Department= request.form['Department']
-    Year = request.form['Year']
-    username=request.form['username']
+    f_username=request.form['username']
+    full_name = request.form['fullname']
     password=request.form['password']
+    Email = request.form['email']
+    Department= request.form['Department']
+    
+    
     
 
-    insert_query = "INSERT INTO faculty (full_name,Email,Department,Year,username,password,) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
-    cursor.execute(insert_query, (full_name,Department,Email,password,Year))
-    db.commit()
+    insert_query = "INSERT INTO faculty (f_username,full_name,password,Email,Department) VALUES (%s,%s,%s,%s,%s)"
+    cursor.execute(insert_query, (f_username,full_name,password,Email,Department))
+    cursor.commit()
 
     
 
