@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration</title>
+    <title>Register</title>
     <link rel="stylesheet" href="">
-    <script src="https://kit.fontawesome.com/9224595727.js" crossorigin="anonymous"></script>
-    <style >
-        *{
+    <script src="https://kit.fontawesome.com/9224595727.js" crossorigin="anonymous" >
+    </script>
+    <style>*{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -154,62 +154,76 @@ form p a{
     color: #999;
 }
 
-
-    </style>
+</style>
 </head>
-
 <body>
     <div class="container">
         <div class="form-box">
             <h1>Register Here!</h1>
-            <form action="/Register" method="POST">
-                <div class="input-group">
-                    <div class="input-field">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" id="fullname" placeholder="First Name  Middle Name  Last Name" required>
+                <form action="/register" method="POST" onsubmit="validateForm()">
+                    <div class="input-group">
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="fullname" placeholder="Full Name" name="fullname" required>
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="input-field select-wrapper">
+                            <i class="fa-solid fa-building select-icon"></i>
+                            <select id="department" placeholder="Select Department" name="department" required>
+                                <option value="" disabled selected>Select Department</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Civil Engineering">E&TC Engineering</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                <option value="Civil Engineering">Civil Engineering</option>
+                                <option value="Mechanical Engineering">Electrical Engineering</option>
+                            </select>
+                        </div>
+                        <div class="input-field select-wrapper">
+                            <i class="fa-solid fa-calendar-days select-icon"></i>
+                            <select id="year" placeholder="Select Year" name="year" required>
+                                <option value="" disabled selected>Select Year</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="RollNo" placeholder="Roll Number" name="RollNo" required>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="Batch" placeholder="Batch" name="Batch" required>
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="username" placeholder="username(Default PRN)" name="username" required pattern="[0-9]{10}"> 
+                        </div>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="password" placeholder="password" name="password" required>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input type="email" id="email" placeholder="Email" required>
-                    </div>
-                    <div class="input-field select-wrapper">
-                        <i class="fa-solid fa-building select-icon"></i>
-                        <select id="department" placeholder="Select Department" required>
-                            <option value="" disabled selected>Select Department</option>
-                            <option value="Computer Science">Computer Science</option>
-                            <option value="Civil Engineering">E&TC Engineering</option>
-                            <option value="Mechanical Engineering">Mechanical Engineering</option>
-                            <option value="Civil Engineering">Civil Engineering</option>
-                            <option value="Mechanical Engineering">Electrical Engineering</option>
-                        </select>
-                    </div>
-                    <div class="input-field select-wrapper">
-                        <i class="fa-solid fa-calendar-days select-icon"></i>
-                        <select id="year" placeholder="Select Year" required>
-                            <option value="" disabled selected>Select Year</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
+                    
+                    <div class="button-field">
+                        <button type="submit">Register</button>
                     </div>
 
-                    <div class="input-field">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" id="username" placeholder="username (Default PRN)" required pattern="[0-9]{10}">
-                    </div>
-
-                    <div class="input-field">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" id="password" placeholder="password" required>
-                    </div>
-                </div>
-
-                <div class="button-field">
-                    <button type="submit">Register</button>
-                </div>
-            </form>
+                    
+                    
+                </form>
         </div>
     </div>
+
+    
+    
+    
 </body>
 </html>
